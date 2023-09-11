@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`1 test with Sulfuras item 1`] = `
+[
+  "Je suis l'item numéro 1 et je m'appelle Sulfuras, Hand of Ragnaros",
+  "Je suis l'item numéro 1 et je m'appelle Sulfuras, Hand of Ragnaros et j'ai une qualité supérieur à 0 : 80",
+]
+`;
+
+exports[`2 test with Aged Brie updated 1x with 10 for sellIn and quality 1`] = `
+[
+  "Je suis l'item numéro 1 et je m'appelle Aged Brie",
+  "Je suis l'item numéro 1 et je m'appelle Aged Brie et j'ai une qualité de 10",
+  "Ma qualité prend +1, elle est maintenant de 11",
+  "Je suis l'item numéro 1 et je m'appelle Aged Brie et j'ai une sellIn de 10",
+  "Ma sellIn prend -1 et est maintenant de 9",
+]
+`;
+
+exports[`3 test with Aged Brie item 1`] = `
+[
+  "Je suis l'item numéro 1 et je m'appelle Aged Brie",
+  "Je suis l'item numéro 1 et je m'appelle Aged Brie et j'ai une qualité de 10",
+  "Ma qualité prend +1, elle est maintenant de 11",
+  "Je suis l'item numéro 1 et je m'appelle Aged Brie et j'ai une sellIn de 2",
+  "Ma sellIn prend -1 et est maintenant de 1",
+  "Je suis l'item numéro 1 et je m'appelle Aged Brie",
+  "Je suis l'item numéro 1 et je m'appelle Aged Brie et j'ai une qualité de 11",
+  "Ma qualité prend +1, elle est maintenant de 12",
+  "Je suis l'item numéro 1 et je m'appelle Aged Brie et j'ai une sellIn de 1",
+  "Ma sellIn prend -1 et est maintenant de 0",
+  "Je suis l'item numéro 1 et je m'appelle Aged Brie",
+  "Je suis l'item numéro 1 et je m'appelle Aged Brie et j'ai une qualité de 12",
+  "Ma qualité prend +1, elle est maintenant de 13",
+  "Je suis l'item numéro 1 et je m'appelle Aged Brie et j'ai une sellIn de 0",
+  "Ma sellIn prend -1 et est maintenant de -1",
+  "Aged Brie prend quand même en qualité (+1), elle est maintenant de 14",
+]
+`;
