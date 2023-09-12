@@ -1,40 +1,6 @@
 import { Item, Items } from "./Item";
-
-class decreaseOrInscreaseQuality extends Items {
-
-  public decreaseQuality(indexItem: number, decreaseValue: number = 1) {
-    if (this.items[indexItem].quality > 0) {
-      if (decreaseValue === 0) {
-        return;
-      } else {
-        this.items[indexItem].quality = this.items[indexItem].quality - 1;
-        console.log(`La qualité diminue de 1, elle est maintenant de ${this.items[indexItem].quality}`);
-        this.decreaseQuality(indexItem, decreaseValue - 1);
-      }
-    }
-  }
-
-  public increaseQuality(indexItem: number) {
-    if (this.items[indexItem].quality < 50) {
-      this.items[indexItem].quality = this.items[indexItem].quality + 1;
-      console.log(`La qualité augmente de 1, elle est maintenant de ${this.items[indexItem].quality}`);
-    }
-  }
-
-  public setQualityToZero(indexItem: number) {
-    this.items[indexItem].quality = this.items[indexItem].quality - this.items[indexItem].quality;
-    console.log(`Délai de vente dépassé : la qualité de ${this.items[indexItem].name} est maintenant de ${this.items[indexItem].quality}`);
-  }
-}
-
-
-class changeSellIn extends Items {
-
-  public decreaseSellIn(indexItem: number) {
-    this.items[indexItem].sellIn = this.items[indexItem].sellIn - 1;
-    console.log(`SellIn prend -1 et est maintenant de ${this.items[indexItem].sellIn}`);
-  }
-}
+import { changeQuality } from "./QualityStatus";
+import { changeSellIn } from "./SellInDelay";
 
 export class GildedRose extends Items {
   items: Array<Item>;
@@ -42,18 +8,19 @@ export class GildedRose extends Items {
   constructor(items = [] as Array<Item>) {
     super(items);
   }
-  
+
   changeSellIn = new changeSellIn(this.items);
-  changeQuality = new decreaseOrInscreaseQuality(this.items);
+  changeQuality = new changeQuality(this.items);
+  MAX_QUALITY = this.changeQuality.getMaximumQuality();
 
   private updateQualityAgedBrie(indexItem: number) {
-    if (this.items[indexItem].quality < 50) {
+    if (this.items[indexItem].quality < this.MAX_QUALITY) {
       this.changeQuality.increaseQuality(indexItem);
     }
   }
 
   private updateQualityBackstagePasses(indexItem: number) {
-    if (this.items[indexItem].quality < 50) {
+    if (this.items[indexItem].quality < this.MAX_QUALITY) {
 
       this.changeQuality.increaseQuality(indexItem);
 
