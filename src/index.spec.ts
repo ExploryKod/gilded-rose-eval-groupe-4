@@ -1,5 +1,6 @@
 import runGoldenMaster from "jest-golden-master";
-import {GildedRose, Item } from "./index";
+import {GildedRose } from "./index";
+import {Item} from "./Item";
 
 test("1 test with Sulfuras item", async () => {
   runGoldenMaster(async () => {

@@ -1,20 +1,4 @@
-type ItemsName =
-  "Aged Brie"
-  | "Backstage passes to a TAFKAL80ETC concert"
-  | "Sulfuras, Hand of Ragnaros"
-  | "Conjured";
-
-export class Item {
-  name: ItemsName;
-  sellIn: number;
-  quality: number;
-
-  constructor(name, sellIn, quality) {
-    this.name = name;
-    this.sellIn = sellIn;
-    this.quality = quality;
-  }
-}
+import { Item } from './Item';
 
 export class GildedRose {
   items: Array<Item>;
@@ -23,10 +7,15 @@ export class GildedRose {
     this.items = items;
   }
 
-  private decreaseQuality(indexItem: number) {
+  private decreaseQuality(indexItem: number, decreaseValue: number = 1) {
     if (this.items[indexItem].quality > 0) {
-      this.items[indexItem].quality = this.items[indexItem].quality - 1;
-      console.log(`La qualité diminue de 1, elle est maintenant de ${this.items[indexItem].quality}`);
+      if (decreaseValue === 0) {
+        return;
+      }else{
+        this.items[indexItem].quality = this.items[indexItem].quality - 1;
+        console.log(`La qualité diminue de 1, elle est maintenant de ${this.items[indexItem].quality}`);
+        this.decreaseQuality(indexItem, decreaseValue - 1);
+      }
     }
   }
 
@@ -60,21 +49,18 @@ export class GildedRose {
 
       console.log(`SellIn est égal à ${this.items[indexItem].sellIn}`);
 
-      if (this.items[indexItem].sellIn < 11) {
-        console.log(`SellIn est inférieur à 11`);
-        this.increaseQuality(indexItem);
-      }
-
-      if (this.items[indexItem].sellIn < 6) {
-        console.log(`SellIn est inférieur à 6`);
-        this.increaseQuality(indexItem);
-      }
+      const bonusThresholds = [11, 6];
+      bonusThresholds.forEach(threshold=> {
+        if (this.items[indexItem].sellIn < threshold) {
+          console.log(`SellIn est inférieur à ${threshold}`);
+          this.increaseQuality(indexItem);
+        }
+      });
     }
   }
 
   private updateQualityConjured(indexItem: number) {
-    this.decreaseQuality(indexItem);
-    this.decreaseQuality(indexItem);
+    this.decreaseQuality(indexItem,2);
   }
 
   updateQuality() {
