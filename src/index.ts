@@ -46,29 +46,28 @@ export class GildedRose extends Items {
 
       console.log(`Item n° ${index + 1} - nom : ${this.items[index].name} avec une qualité de ${this.items[index].quality}`);
 
-      if (this.items[index].name == "Aged Brie") {
-        this.updateQualityAgedBrie(index);
-        this.changeSellIn.decreaseSellIn(index);
-        if (this.items[index].sellIn < 0) {
-          console.log(`Délai de vente dépassé`);
-          console.log(`La qualité de ${this.items[index].name} augmente quand même`);
+      switch (this.items[index].name) {
+        case "Aged Brie":
           this.updateQualityAgedBrie(index);
-        }
-      }
+          this.changeSellIn.decreaseSellIn(index);
+          if (this.items[index].sellIn < 0) {
+            console.log(`Délai de vente dépassé`);
+            console.log(`La qualité de ${this.items[index].name} augmente quand même`);
+            this.updateQualityAgedBrie(index);
+          }
+          break;
+        case "Backstage passes to a TAFKAL80ETC concert":
+          this.updateQualityBackstagePasses(index);
+          this.changeSellIn.decreaseSellIn(index);
+          if (this.items[index].sellIn < 0) {
+            console.log(`Délai de vente dépassé`);
+            this.changeQuality.setQualityToZero(index);
+          }
+          break;
+        case "Conjured":
+          this.updateQualityConjured(index);
+          this.changeSellIn.decreaseSellIn(index);
 
-
-      if (this.items[index].name == "Backstage passes to a TAFKAL80ETC concert") {
-        this.updateQualityBackstagePasses(index);
-        this.changeSellIn.decreaseSellIn(index);
-        if (this.items[index].sellIn < 0) {
-          console.log(`Délai de vente dépassé`);
-          this.changeQuality.setQualityToZero(index);
-        }
-      }
-
-      if (this.items[index].name == "Conjured") {
-        this.updateQualityConjured(index);
-        this.changeSellIn.decreaseSellIn(index);
       }
 
     });

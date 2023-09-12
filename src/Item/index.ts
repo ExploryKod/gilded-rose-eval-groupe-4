@@ -9,7 +9,7 @@ export class Item {
   sellIn: number;
   quality: number;
   BonusThresholds: Array<number>;
-
+  
   constructor(name, sellIn, quality, BonusThresholds = []) {
     this.name = name;
     this.sellIn = sellIn;

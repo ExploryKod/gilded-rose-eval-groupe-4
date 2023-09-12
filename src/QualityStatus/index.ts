@@ -2,9 +2,9 @@ import { Items } from '../Item';
 
 export class changeQuality extends Items {
 
-  private maxQuality = 50;
+  private maxQuality: number = 50;
 
-  public setMaxQuality(maxQuality: number) {
+  public setMaximumQuality(maxQuality: number) {
     maxQuality = this.maxQuality;
   }
 
