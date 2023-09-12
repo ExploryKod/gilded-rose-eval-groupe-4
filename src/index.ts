@@ -3,10 +3,10 @@ import { Item } from "./Item";
 class decreaseOrInscreaseQuality {
   items: Array<Item>;
 
-  constructor(items = [] as Array<Item>) { 
+  constructor(items = [] as Array<Item>) {
     this.items = items;
   }
-  
+
   protected decreaseQuality(indexItem: number, decreaseValue: number = 1) {
     if (this.items[indexItem].quality > 0) {
       if (decreaseValue === 0) {
@@ -36,7 +36,7 @@ class decreaseOrInscreaseQuality {
 class changeSellIn {
   items: Array<Item>;
 
-  constructor(items = [] as Array<Item>) { 
+  constructor(items = [] as Array<Item>) {
     this.items = items;
   }
 
@@ -57,37 +57,6 @@ export class GildedRose extends decreaseOrInscreaseQuality {
   }
 
   changeSellIn = new changeSellIn(this.items);
-
-
-  // private decreaseQuality(indexItem: number, decreaseValue: number = 1) {
-  //   if (this.items[indexItem].quality > 0) {
-  //     if (decreaseValue === 0) {
-  //       return;
-  //     } else {
-  //       this.items[indexItem].quality = this.items[indexItem].quality - 1;
-  //       console.log(`La qualité diminue de 1, elle est maintenant de ${this.items[indexItem].quality}`);
-  //       this.decreaseQuality(indexItem, decreaseValue - 1);
-  //     }
-  //   }
-  // }
-
-
-  // private increaseQuality(indexItem: number) {
-  //   if (this.items[indexItem].quality < 50) {
-  //     this.items[indexItem].quality = this.items[indexItem].quality + 1;
-  //     console.log(`La qualité augmente de 1, elle est maintenant de ${this.items[indexItem].quality}`);
-  //   }
-  // }
-
-  // private setQualityToZero(indexItem: number) {
-  //   this.items[indexItem].quality = this.items[indexItem].quality - this.items[indexItem].quality;
-  //   console.log(`Délai de vente dépassé : la qualité de ${this.items[indexItem].name} est maintenant de ${this.items[indexItem].quality}`);
-  // }
-
-  // private decreaseSellIn(indexItem: number) {
-  //   this.items[indexItem].sellIn = this.items[indexItem].sellIn - 1;
-  //   console.log(`SellIn prend -1 et est maintenant de ${this.items[indexItem].sellIn}`);
-  // }
 
   private updateQualityAgedBrie(indexItem: number) {
     if (this.items[indexItem].quality < 50) {
