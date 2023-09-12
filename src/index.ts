@@ -26,7 +26,7 @@ export class GildedRose extends Items {
 
       console.log(`SellIn est égal à ${this.items[indexItem].sellIn}`);
 
-      const bonusThresholds = [11, 6];
+      const bonusThresholds = this.items[indexItem].BonusThresholds;
       bonusThresholds.forEach(threshold => {
         if (this.items[indexItem].sellIn < threshold) {
           console.log(`SellIn est inférieur à ${threshold}`);
