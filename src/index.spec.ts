@@ -27,7 +27,7 @@ test("3 test with Aged Brie when sellIn is negative", async () => {
   });
 });
 
-test("4 test with Backstage passes to a TAFKAL80ETC concert when", async () => {
+test("4 test with Backstage passes to a TAFKAL80ETC concert", async () => {
   runGoldenMaster(async () => {
     const item1 = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 10 );
     const items = new GildedRose([item1]);
@@ -70,9 +70,7 @@ test("7 test quality under 50", async () => {
   });
 });
 
-
-/////////////////////// SIMULATION OF CONJURED BEFORE IT EXISTS //////////////////////
-test("99 test with conjured", async () => {
+test("8 test with Conjured item", async () => {
   runGoldenMaster(async () => {
     const item1 = new Item("Conjured", 15, 3 );
     const items = new GildedRose([item1]);
@@ -83,9 +81,9 @@ test("99 test with conjured", async () => {
   });
 });
 
-test("99 test with conjured", async () => {
+test("9 test with Conjured item when sellIn goes negative", async () => {
   runGoldenMaster(async () => {
-    const item1 = new Item("Conjured", 3, 45 );
+    const item1 = new Item("Conjured", 2, 47 );
     const items = new GildedRose([item1]);
     items.updateQuality();
     items.updateQuality();
@@ -93,3 +91,27 @@ test("99 test with conjured", async () => {
     items.updateQuality();
   });
 });
+
+
+/////////////////////// SIMULATION OF CONJURED BEFORE IT EXISTS //////////////////////
+// test("99 test without category normally", async () => {
+//   runGoldenMaster(async () => {
+//     const item1 = new Item("normal item", 15, 3 );
+//     const items = new GildedRose([item1]);
+//     items.updateQuality();
+//     items.updateQuality();
+//     items.updateQuality();
+//     items.updateQuality();
+//   });
+// });
+//
+// test("99 test without category when sellIn goes negative", async () => {
+//   runGoldenMaster(async () => {
+//     const item1 = new Item("no category", 3, 45 );
+//     const items = new GildedRose([item1]);
+//     items.updateQuality();
+//     items.updateQuality();
+//     items.updateQuality();
+//     items.updateQuality();
+//   });
+// });

@@ -41,7 +41,7 @@ exports[`3 test with Aged Brie when sellIn is negative 1`] = `
 ]
 `;
 
-exports[`4 test with Backstage passes to a TAFKAL80ETC concert when 1`] = `
+exports[`4 test with Backstage passes to a TAFKAL80ETC concert 1`] = `
 [
   "Mise à jour quotidienne de la qualité des items",
   "Item n° 1 - nom : Backstage passes to a TAFKAL80ETC concert avec une qualité de 10",
@@ -179,21 +179,21 @@ exports[`7 test quality under 50 1`] = `
 ]
 `;
 
-exports[`99 test with conjured 1`] = `
+exports[`8 test with Conjured item 1`] = `
 [
   "Mise à jour quotidienne de la qualité des items",
   "Item n° 1 - nom : Conjured avec une qualité de 3",
   "La qualité diminue de 1, elle est maintenant de 2",
-  "SellIn prend -1 et est maintenant de 14",
-  "Fin de la mise à jour quotidienne de la qualité des items",
-  "Mise à jour quotidienne de la qualité des items",
-  "Item n° 1 - nom : Conjured avec une qualité de 2",
   "La qualité diminue de 1, elle est maintenant de 1",
-  "SellIn prend -1 et est maintenant de 13",
+  "SellIn prend -1 et est maintenant de 14",
   "Fin de la mise à jour quotidienne de la qualité des items",
   "Mise à jour quotidienne de la qualité des items",
   "Item n° 1 - nom : Conjured avec une qualité de 1",
   "La qualité diminue de 1, elle est maintenant de 0",
+  "SellIn prend -1 et est maintenant de 13",
+  "Fin de la mise à jour quotidienne de la qualité des items",
+  "Mise à jour quotidienne de la qualité des items",
+  "Item n° 1 - nom : Conjured avec une qualité de 0",
   "SellIn prend -1 et est maintenant de 12",
   "Fin de la mise à jour quotidienne de la qualité des items",
   "Mise à jour quotidienne de la qualité des items",
@@ -203,29 +203,31 @@ exports[`99 test with conjured 1`] = `
 ]
 `;
 
-exports[`99 test with conjured 2`] = `
+exports[`9 test with Conjured item when sellIn goes negative 1`] = `
 [
+  "Mise à jour quotidienne de la qualité des items",
+  "Item n° 1 - nom : Conjured avec une qualité de 47",
+  "La qualité diminue de 1, elle est maintenant de 46",
+  "La qualité diminue de 1, elle est maintenant de 45",
+  "SellIn prend -1 et est maintenant de 1",
+  "Fin de la mise à jour quotidienne de la qualité des items",
   "Mise à jour quotidienne de la qualité des items",
   "Item n° 1 - nom : Conjured avec une qualité de 45",
   "La qualité diminue de 1, elle est maintenant de 44",
-  "SellIn prend -1 et est maintenant de 2",
-  "Fin de la mise à jour quotidienne de la qualité des items",
-  "Mise à jour quotidienne de la qualité des items",
-  "Item n° 1 - nom : Conjured avec une qualité de 44",
   "La qualité diminue de 1, elle est maintenant de 43",
-  "SellIn prend -1 et est maintenant de 1",
+  "SellIn prend -1 et est maintenant de 0",
   "Fin de la mise à jour quotidienne de la qualité des items",
   "Mise à jour quotidienne de la qualité des items",
   "Item n° 1 - nom : Conjured avec une qualité de 43",
   "La qualité diminue de 1, elle est maintenant de 42",
-  "SellIn prend -1 et est maintenant de 0",
-  "Fin de la mise à jour quotidienne de la qualité des items",
-  "Mise à jour quotidienne de la qualité des items",
-  "Item n° 1 - nom : Conjured avec une qualité de 42",
   "La qualité diminue de 1, elle est maintenant de 41",
   "SellIn prend -1 et est maintenant de -1",
-  "Délai de vente dépassé",
+  "Fin de la mise à jour quotidienne de la qualité des items",
+  "Mise à jour quotidienne de la qualité des items",
+  "Item n° 1 - nom : Conjured avec une qualité de 41",
   "La qualité diminue de 1, elle est maintenant de 40",
+  "La qualité diminue de 1, elle est maintenant de 39",
+  "SellIn prend -1 et est maintenant de -2",
   "Fin de la mise à jour quotidienne de la qualité des items",
 ]
 `;

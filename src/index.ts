@@ -24,9 +24,10 @@ export class GildedRose {
   }
 
   private decreaseQuality(indexItem: number) {
-    this.items[indexItem].quality = this.items[indexItem].quality - 1;
-    console.log(`La qualité diminue de 1, elle est maintenant de ${this.items[indexItem].quality}`);
-
+    if (this.items[indexItem].quality > 0) {
+      this.items[indexItem].quality = this.items[indexItem].quality - 1;
+      console.log(`La qualité diminue de 1, elle est maintenant de ${this.items[indexItem].quality}`);
+    }
   }
 
   private increaseQuality(indexItem: number) {
@@ -54,12 +55,16 @@ export class GildedRose {
 
   private updateQualityBackstagePasses(indexItem: number) {
     if (this.items[indexItem].quality < 50) {
+
       this.increaseQuality(indexItem);
+
       console.log(`SellIn est égal à ${this.items[indexItem].sellIn}`);
+
       if (this.items[indexItem].sellIn < 11) {
         console.log(`SellIn est inférieur à 11`);
         this.increaseQuality(indexItem);
       }
+
       if (this.items[indexItem].sellIn < 6) {
         console.log(`SellIn est inférieur à 6`);
         this.increaseQuality(indexItem);
@@ -67,9 +72,15 @@ export class GildedRose {
     }
   }
 
+  private updateQualityConjured(indexItem: number) {
+    this.decreaseQuality(indexItem);
+    this.decreaseQuality(indexItem);
+  }
+
   updateQuality() {
     console.log(`Mise à jour quotidienne de la qualité des items`);
     for (let i = 0; i < this.items.length; i++) {
+
       console.log(`Item n° ${i + 1} - nom : ${this.items[i].name} avec une qualité de ${this.items[i].quality}`);
 
       if (this.items[i].name == "Aged Brie") {
@@ -91,31 +102,11 @@ export class GildedRose {
         }
       }
 
+      if (this.items[i].name == "Conjured") {
+        this.updateQualityConjured(i);
+        this.decreaseSellIn(i);
+      }
 
-      if (this.items[i].name != "Aged Brie" && this.items[i].name != "Backstage passes to a TAFKAL80ETC concert") {
-        if (this.items[i].quality > 0) {
-          if (this.items[i].name != "Sulfuras, Hand of Ragnaros") {
-            this.decreaseQuality(i);
-          }
-        }
-      }
-      if (this.items[i].name != "Sulfuras, Hand of Ragnaros") {
-        // temporary if
-        if (this.items[i].name != "Aged Brie" && this.items[i].name != "Backstage passes to a TAFKAL80ETC concert") this.decreaseSellIn(i);
-      }
-      if (this.items[i].sellIn < 0) {
-        // temporary if
-        if (this.items[i].name != "Aged Brie" && this.items[i].name != "Backstage passes to a TAFKAL80ETC concert") console.log(`Délai de vente dépassé`);
-        if (this.items[i].name != "Aged Brie") {
-          if (this.items[i].name != "Backstage passes to a TAFKAL80ETC concert") {
-            if (this.items[i].quality > 0) {
-              if (this.items[i].name != "Sulfuras, Hand of Ragnaros") {
-                this.decreaseQuality(i);
-              }
-            }
-          }
-        }
-      }
     }
     console.log(`Fin de la mise à jour quotidienne de la qualité des items`);
     return this.items;
