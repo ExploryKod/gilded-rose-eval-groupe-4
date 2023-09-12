@@ -89,7 +89,6 @@ export class GildedRose {
           console.log(`Délai de vente dépassé`);
           this.setQualityToZero(i);
         }
-
       }
 
 
@@ -98,28 +97,6 @@ export class GildedRose {
           if (this.items[i].name != "Sulfuras, Hand of Ragnaros") {
             this.decreaseQuality(i);
           }
-        }
-      } else {
-        if (this.items[i].quality < 50) {
-          // temporary if
-          if (this.items[i].name != "Aged Brie" && this.items[i].name != "Backstage passes to a TAFKAL80ETC concert") this.increaseQuality(i);
-
-
-          // if (this.items[i].name == "Backstage passes to a TAFKAL80ETC concert") {
-          //   console.log(`SellIn est égal à ${this.items[i].sellIn}`);
-          //   if (this.items[i].sellIn < 11) {
-          //     console.log(`SellIn est inférieur à 11`);
-          //     if (this.items[i].quality < 50) {
-          //       this.increaseQuality(i);
-          //     }
-          //   }
-          //   if (this.items[i].sellIn < 6) {
-          //     console.log(`SellIn est inférieur à 6`);
-          //     if (this.items[i].quality < 50) {
-          //       this.increaseQuality(i);
-          //     }
-          //   }
-          // }
         }
       }
       if (this.items[i].name != "Sulfuras, Hand of Ragnaros") {
@@ -137,16 +114,7 @@ export class GildedRose {
               }
             }
           }
-          // else {
-          //   this.setQualityToZero(i);
-          // }
         }
-        // else {
-        //   if (this.items[i].quality < 50) {
-        //     console.log(`La qualité de ${this.items[i].name} augmente quand même`);
-        //     this.increaseQuality(i);
-        //   }
-        // }
       }
     }
     console.log(`Fin de la mise à jour quotidienne de la qualité des items`);
