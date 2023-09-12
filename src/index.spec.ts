@@ -71,10 +71,6 @@ test("7 test quality under 50", async () => {
 });
 
 
-
-
-
-
 /////////////////////// SIMULATION OF CONJURED BEFORE IT EXISTS //////////////////////
 test("99 test with conjured", async () => {
   runGoldenMaster(async () => {
