@@ -4,14 +4,20 @@ type ItemsName =
   | "Sulfuras, Hand of Ragnaros"
   | "Conjured";
 
-export class Item {
-  name: ItemsName;
-  sellIn: number;
-  quality: number;
+// export class Item {
+//   name: ItemsName;
+//   sellIn: number;
+//   quality: number;
 
-  constructor(name, sellIn, quality) {
-    this.name = name;
-    this.sellIn = sellIn;
-    this.quality = quality;
-  }
+//   constructor(name, sellIn, quality) {
+//     this.name = name;
+//     this.sellIn = sellIn;
+//     this.quality = quality;
+//   }
+// }
+
+export class Item {
+  constructor(public name: ItemsName, public sellIn: number, public quality: number) { }
+
+  updateQuality() { }
 }
