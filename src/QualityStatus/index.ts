@@ -36,3 +36,36 @@ export class changeQuality extends Items {
     console.log(`Délai de vente dépassé : la qualité de ${this.items[indexItem].name} est maintenant de ${this.items[indexItem].quality}`);
   }
 }
+
+export class UpdateItemQuality extends changeQuality {
+
+  public updateQualityAgedBrie(indexItem: number) {
+    if (this.items[indexItem].quality < this.getMaximumQuality()) {
+      this.increaseQuality(indexItem);
+    }
+  }
+
+  public updateQualityBackstagePasses(indexItem: number) {
+    if (this.items[indexItem].quality < this.getMaximumQuality()) {
+
+      this.increaseQuality(indexItem);
+
+      console.log(`SellIn est égal à ${this.items[indexItem].sellIn}`);
+
+      const bonusThresholds = this.items[indexItem].BonusThresholds;
+      bonusThresholds.forEach(threshold => {
+        if (this.items[indexItem].sellIn < threshold) {
+          console.log(`SellIn est inférieur à ${threshold}`);
+          this.increaseQuality(indexItem);
+        };
+      });
+    }
+  }
+
+  public updateQualityConjured(indexItem: number) {
+    this.decreaseQuality(indexItem, 2);
+  }
+  
+
+}
+
