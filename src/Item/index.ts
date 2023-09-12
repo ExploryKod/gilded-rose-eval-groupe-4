@@ -16,3 +16,13 @@ export class Item {
   }
 }
 
+export class Items {
+  items: Array<Item>;
+
+  constructor(items = [] as Array<Item>) {
+    this.items = items;
+  }
+}
+
+
+
