@@ -1,4 +1,4 @@
-import { Item } from './Item';
+import { Item } from "./Item";
 
 export class GildedRose {
   items: Array<Item>;
@@ -11,7 +11,7 @@ export class GildedRose {
     if (this.items[indexItem].quality > 0) {
       if (decreaseValue === 0) {
         return;
-      }else{
+      } else {
         this.items[indexItem].quality = this.items[indexItem].quality - 1;
         console.log(`La qualité diminue de 1, elle est maintenant de ${this.items[indexItem].quality}`);
         this.decreaseQuality(indexItem, decreaseValue - 1);
@@ -50,7 +50,7 @@ export class GildedRose {
       console.log(`SellIn est égal à ${this.items[indexItem].sellIn}`);
 
       const bonusThresholds = [11, 6];
-      bonusThresholds.forEach(threshold=> {
+      bonusThresholds.forEach(threshold => {
         if (this.items[indexItem].sellIn < threshold) {
           console.log(`SellIn est inférieur à ${threshold}`);
           this.increaseQuality(indexItem);
@@ -60,40 +60,40 @@ export class GildedRose {
   }
 
   private updateQualityConjured(indexItem: number) {
-    this.decreaseQuality(indexItem,2);
+    this.decreaseQuality(indexItem, 2);
   }
 
   updateQuality() {
     console.log(`Mise à jour quotidienne de la qualité des items`);
-    for (let i = 0; i < this.items.length; i++) {
+    this.items.forEach((item, index) => {
 
-      console.log(`Item n° ${i + 1} - nom : ${this.items[i].name} avec une qualité de ${this.items[i].quality}`);
+      console.log(`Item n° ${index + 1} - nom : ${this.items[index].name} avec une qualité de ${this.items[index].quality}`);
 
-      if (this.items[i].name == "Aged Brie") {
-        this.updateQualityAgedBrie(i);
-        this.decreaseSellIn(i);
-        if (this.items[i].sellIn < 0) {
+      if (this.items[index].name == "Aged Brie") {
+        this.updateQualityAgedBrie(index);
+        this.decreaseSellIn(index);
+        if (this.items[index].sellIn < 0) {
           console.log(`Délai de vente dépassé`);
-          console.log(`La qualité de ${this.items[i].name} augmente quand même`);
-          this.updateQualityAgedBrie(i);
+          console.log(`La qualité de ${this.items[index].name} augmente quand même`);
+          this.updateQualityAgedBrie(index);
         }
       }
 
-      if (this.items[i].name == "Backstage passes to a TAFKAL80ETC concert") {
-        this.updateQualityBackstagePasses(i);
-        this.decreaseSellIn(i);
-        if (this.items[i].sellIn < 0) {
+      if (this.items[index].name == "Backstage passes to a TAFKAL80ETC concert") {
+        this.updateQualityBackstagePasses(index);
+        this.decreaseSellIn(index);
+        if (this.items[index].sellIn < 0) {
           console.log(`Délai de vente dépassé`);
-          this.setQualityToZero(i);
+          this.setQualityToZero(index);
         }
       }
 
-      if (this.items[i].name == "Conjured") {
-        this.updateQualityConjured(i);
-        this.decreaseSellIn(i);
+      if (this.items[index].name == "Conjured") {
+        this.updateQualityConjured(index);
+        this.decreaseSellIn(index);
       }
 
-    }
+    });
     console.log(`Fin de la mise à jour quotidienne de la qualité des items`);
     return this.items;
   }
