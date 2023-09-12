@@ -15,3 +15,4 @@ export class Item {
     this.quality = quality;
   }
 }
+
