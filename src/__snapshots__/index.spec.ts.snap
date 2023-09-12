@@ -34,7 +34,9 @@ exports[`3 test with Aged Brie when sellIn is negative 1`] = `
   "Item n° 1 - nom : Aged Brie avec une qualité de 12",
   "La qualité augmente de 1, elle est maintenant de 13",
   "SellIn prend -1 et est maintenant de -1",
-  "Aged Brie prend quand même en qualité (+1), elle est maintenant de 14",
+  "Délai de vente dépassé",
+  "La qualité de Aged Brie augmente quand même",
+  "La qualité augmente de 1, elle est maintenant de 14",
   "Fin de la mise à jour quotidienne de la qualité des items",
 ]
 `;
@@ -45,16 +47,20 @@ exports[`4 test with Backstage passes to a TAFKAL80ETC concert when 1`] = `
   "Item n° 1 - nom : Backstage passes to a TAFKAL80ETC concert avec une qualité de 10",
   "La qualité augmente de 1, elle est maintenant de 11",
   "SellIn est égal à 5",
-  "La qualité augmente de 1 car sellIn < 11, elle est maintenant de 12",
-  "La qualité augmente de 1 car sellIn < 6, elle est maintenant de 13",
+  "SellIn est inférieur à 11",
+  "La qualité augmente de 1, elle est maintenant de 12",
+  "SellIn est inférieur à 6",
+  "La qualité augmente de 1, elle est maintenant de 13",
   "SellIn prend -1 et est maintenant de 4",
   "Fin de la mise à jour quotidienne de la qualité des items",
   "Mise à jour quotidienne de la qualité des items",
   "Item n° 1 - nom : Backstage passes to a TAFKAL80ETC concert avec une qualité de 13",
   "La qualité augmente de 1, elle est maintenant de 14",
   "SellIn est égal à 4",
-  "La qualité augmente de 1 car sellIn < 11, elle est maintenant de 15",
-  "La qualité augmente de 1 car sellIn < 6, elle est maintenant de 16",
+  "SellIn est inférieur à 11",
+  "La qualité augmente de 1, elle est maintenant de 15",
+  "SellIn est inférieur à 6",
+  "La qualité augmente de 1, elle est maintenant de 16",
   "SellIn prend -1 et est maintenant de 3",
   "Fin de la mise à jour quotidienne de la qualité des items",
 ]
@@ -66,25 +72,32 @@ exports[`5 test with Backstage passes to a TAFKAL80ETC concert when sellIn is ne
   "Item n° 1 - nom : Backstage passes to a TAFKAL80ETC concert avec une qualité de 10",
   "La qualité augmente de 1, elle est maintenant de 11",
   "SellIn est égal à 2",
-  "La qualité augmente de 1 car sellIn < 11, elle est maintenant de 12",
-  "La qualité augmente de 1 car sellIn < 6, elle est maintenant de 13",
+  "SellIn est inférieur à 11",
+  "La qualité augmente de 1, elle est maintenant de 12",
+  "SellIn est inférieur à 6",
+  "La qualité augmente de 1, elle est maintenant de 13",
   "SellIn prend -1 et est maintenant de 1",
   "Fin de la mise à jour quotidienne de la qualité des items",
   "Mise à jour quotidienne de la qualité des items",
   "Item n° 1 - nom : Backstage passes to a TAFKAL80ETC concert avec une qualité de 13",
   "La qualité augmente de 1, elle est maintenant de 14",
   "SellIn est égal à 1",
-  "La qualité augmente de 1 car sellIn < 11, elle est maintenant de 15",
-  "La qualité augmente de 1 car sellIn < 6, elle est maintenant de 16",
+  "SellIn est inférieur à 11",
+  "La qualité augmente de 1, elle est maintenant de 15",
+  "SellIn est inférieur à 6",
+  "La qualité augmente de 1, elle est maintenant de 16",
   "SellIn prend -1 et est maintenant de 0",
   "Fin de la mise à jour quotidienne de la qualité des items",
   "Mise à jour quotidienne de la qualité des items",
   "Item n° 1 - nom : Backstage passes to a TAFKAL80ETC concert avec une qualité de 16",
   "La qualité augmente de 1, elle est maintenant de 17",
   "SellIn est égal à 0",
-  "La qualité augmente de 1 car sellIn < 11, elle est maintenant de 18",
-  "La qualité augmente de 1 car sellIn < 6, elle est maintenant de 19",
+  "SellIn est inférieur à 11",
+  "La qualité augmente de 1, elle est maintenant de 18",
+  "SellIn est inférieur à 6",
+  "La qualité augmente de 1, elle est maintenant de 19",
   "SellIn prend -1 et est maintenant de -1",
+  "Délai de vente dépassé",
   "Délai de vente dépassé : la qualité de Backstage passes to a TAFKAL80ETC concert est maintenant de 0",
   "Fin de la mise à jour quotidienne de la qualité des items",
 ]
@@ -125,7 +138,36 @@ exports[`6 test with several items when quality goes over 50 1`] = `
 ]
 `;
 
-exports[`7 test with conjured 1`] = `
+exports[`7 test quality under 50 1`] = `
+[
+  "Mise à jour quotidienne de la qualité des items",
+  "Item n° 1 - nom : Backstage passes to a TAFKAL80ETC concert avec une qualité de -4",
+  "Item n° 2 - nom : Aged Brie avec une qualité de 23",
+  "La qualité augmente de 1, elle est maintenant de 24",
+  "SellIn prend -1 et est maintenant de 7",
+  "Fin de la mise à jour quotidienne de la qualité des items",
+  "Mise à jour quotidienne de la qualité des items",
+  "Item n° 1 - nom : Backstage passes to a TAFKAL80ETC concert avec une qualité de -4",
+  "Item n° 2 - nom : Aged Brie avec une qualité de 24",
+  "La qualité augmente de 1, elle est maintenant de 25",
+  "SellIn prend -1 et est maintenant de 6",
+  "Fin de la mise à jour quotidienne de la qualité des items",
+  "Mise à jour quotidienne de la qualité des items",
+  "Item n° 1 - nom : Backstage passes to a TAFKAL80ETC concert avec une qualité de -4",
+  "Item n° 2 - nom : Aged Brie avec une qualité de 25",
+  "La qualité augmente de 1, elle est maintenant de 26",
+  "SellIn prend -1 et est maintenant de 5",
+  "Fin de la mise à jour quotidienne de la qualité des items",
+  "Mise à jour quotidienne de la qualité des items",
+  "Item n° 1 - nom : Backstage passes to a TAFKAL80ETC concert avec une qualité de -4",
+  "Item n° 2 - nom : Aged Brie avec une qualité de 26",
+  "La qualité augmente de 1, elle est maintenant de 27",
+  "SellIn prend -1 et est maintenant de 4",
+  "Fin de la mise à jour quotidienne de la qualité des items",
+]
+`;
+
+exports[`99 test with conjured 1`] = `
 [
   "Mise à jour quotidienne de la qualité des items",
   "Item n° 1 - nom : Conjured avec une qualité de 3",
@@ -149,7 +191,7 @@ exports[`7 test with conjured 1`] = `
 ]
 `;
 
-exports[`7 test with conjured 2`] = `
+exports[`99 test with conjured 2`] = `
 [
   "Mise à jour quotidienne de la qualité des items",
   "Item n° 1 - nom : Conjured avec une qualité de 45",
@@ -170,6 +212,8 @@ exports[`7 test with conjured 2`] = `
   "Item n° 1 - nom : Conjured avec une qualité de 42",
   "La qualité diminue de 1, elle est maintenant de 41",
   "SellIn prend -1 et est maintenant de -1",
+  "Délai de vente dépassé",
+  "La qualité diminue de 1, elle est maintenant de 40",
   "Fin de la mise à jour quotidienne de la qualité des items",
 ]
 `;
