@@ -1,4 +1,5 @@
 import { Item } from "./Item";
+import { AgedBrie } from "./AgedBrie";
 
 export class GildedRose {
   items: Array<Item>;
@@ -69,7 +70,16 @@ export class GildedRose {
 
       console.log(`Item n° ${index + 1} - nom : ${this.items[index].name} avec une qualité de ${this.items[index].quality}`);
 
+      // echec agedBrie class
+      // if (this.items[index].name == "Aged Brie") {
+      //   const agedBrie = new AgedBrie(this.items[index].name, this.items[index].sellIn, this.items[index].quality);
+      //
+      //   agedBrie.updateAgedBrie();
+      // }
+
       if (this.items[index].name == "Aged Brie") {
+        const agedBrie = new AgedBrie(this.items[index].name, this.items[index].sellIn, this.items[index].quality);
+
         this.updateQualityAgedBrie(index);
         this.decreaseSellIn(index);
         if (this.items[index].sellIn < 0) {
