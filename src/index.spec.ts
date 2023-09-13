@@ -1,9 +1,9 @@
 import runGoldenMaster from "jest-golden-master";
 import {GildedRose } from "./index";
-import { AgedBrie } from "./AgedBrie";
-import { BackstagePasses } from "./BackstagePasses";
-import { Conjured } from "./Conjured";
-import { Sulfuras } from "./Sulfuras";
+import { AgedBrie } from "./Item/agebrie.item";
+import { BackstagePasses } from "./Item/backpass.item";
+import { Conjured } from "./Item/conjured.item";
+import { Sulfuras } from "./Item/sulfuras.item";
 
 test("1 test with Sulfuras item", async () => {
   runGoldenMaster(async () => {
