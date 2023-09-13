@@ -1,9 +1,12 @@
-import { Items } from '../Item';
+import { Item } from '../Item';
 
-export class changeSellIn extends Items {
+export class changeSellIn extends Item {
 
     public decreaseSellIn(indexItem: number) {
-        this.items[indexItem].sellIn = this.items[indexItem].sellIn - 1;
-        console.log(`SellIn prend -1 et est maintenant de ${this.items[indexItem].sellIn}`);
+        this.sellIn = this.sellIn - 1;
+        console.log(`SellIn prend -1 et est maintenant de ${this.sellIn}`);
+    }
+
+    update(): void {
     }
 }
